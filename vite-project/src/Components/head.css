@@ -21,10 +21,6 @@ h2 {
     align-items: center;
     text-align: center;
     justify-content: space-between;
-    gap: 100px;
-}
-
- {
-    color: red;
-    border: 1px solid red;
+    /* gap: 50px; */
+    padding-right : 5px;
 }

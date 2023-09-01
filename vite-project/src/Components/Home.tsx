@@ -1,25 +1,63 @@
 import React from 'react'
 import "./home.css"
 import Head from './Head'
+import Footer from './Footer'
+import { auth, googleProvider } from "../Config/FirebaseConfig"
+import { createUserWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth"
 
 export default function Home() {
+
+    const signInWithGoogle = async () => {
+        try{
+            await signInWithPopup(auth, googleProvider );
+        } catch (err) {
+            console.error(err)
+        }
+    }
+
+
+    const signIn = async () => {
+        try{
+            await createUserWithEmailAndPassword(auth, email, password);
+        } catch (err) {
+            console.error(err)
+        }
+    };
+
+    const logOut = async () => {
+        try{
+            await signOut(auth);
+        } catch (err) {
+            console.error(err)
+        }
+    };
+
   return (
     <div className="heads">
         <Head />
         <div className="others">
             <div className="name">
-                <span>Hi, Alexa...</span>
-                <p>N.B: Please choose a junction you know is nearer to your apartment. The junctions are listed with reference of the distance to the main road</p>
+                <span>Hi, {(auth?.currentUser?.email)}; </span>
+                <p className='text'>N.B: Please choose a junction you know is nearer to your apartment. The junctions are listed with reference of the distance to the main road</p>
             </div>
             <div className="junctions">
                 <div className="junctionLists">
-                    <button>Left Junction A</button>
-                    <button>Left Junction E</button>
-                    <button>Right Junction A</button>
-                    <button>Right Junction E</button>
+                    <div>
+                        <button className='usage'>Left Junction A</button>
+                    </div>
+                    <div>
+                        <button className='usage'>Left Junction E</button>
+                    </div>
+                    <div>
+                        <button className='usage'>Right Junction A</button>
+                    </div>
+                    <div>
+                        <button className='usage'>Right Junction E</button>
+                    </div>
                 </div>
             </div>
         </div>
+        <Footer />
     </div>
   )
 }
