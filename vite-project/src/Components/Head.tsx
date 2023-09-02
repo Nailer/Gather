@@ -11,6 +11,9 @@ export default function Head() {
       <div className="contactUs">
         <h2>Contact Us</h2>
       </div>
+
+
+
     </nav>
   )
 }

@@ -16,6 +16,11 @@ export default function Page() {
         setShowQRCode(true);
     };
 
+    const handleClick = () => {
+        
+        setStudents((prevCount) => (prevCount >= 12 ? 1 : prevCount + 1));
+    };
+
   return (
     <div>
         <Head />
@@ -34,16 +39,6 @@ export default function Page() {
                 <span>{students}</span>
             </div>
 
-            <div className="students">
-                <p>Tickets Avaiable</p>
-                <span>{tickets}</span>
-            </div>
-
-            <div className="qrCode">
-                <div className="generate">
-                    <h1><button className='btn' onClick={generateQRCode}>Generate QR Code</button></h1>
-                </div>
-            <div>
             <input
                 className='nameInput'
                 type="text"
@@ -53,9 +48,15 @@ export default function Page() {
             />
             
 
+            <div className="qrCode">
+                <div className="generate">
+                    <h1><button  className='btn' onClick={() => {generateQRCode(); handleClick()}}>Generate QR Code</button></h1>
+                </div>
+            <div>
+
             {showQRCode && (
-                <div>
-                <QRCode className="qrCodeUse" value={text} />
+                <div className="qrCodeUse">
+                <QRCode value={text} />
                 </div>
             )}
         </div>

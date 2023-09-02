@@ -2,7 +2,9 @@ import { auth, googleProvider } from "../Config/FirebaseConfig"
 import { createUserWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth"
 import Head from './Head'
 import "./order.css"
+import Home from "./Home"
 import Footer from './Footer'
+import { Link } from "react-router-dom"
 
 export default function Order() {
 
@@ -51,7 +53,7 @@ export default function Order() {
                     </div>
 
                     <div className="emailDivv">
-                        <input type="submit" value="Log In" />
+                        <input onClick={signIn} type="submit" value="Log In" />
                     </div>
 
                     <div className="or">
@@ -59,7 +61,7 @@ export default function Order() {
                     </div>
 
                     <div className="emailDivv">
-                        <button onClick={signInWithGoogle}>Sign Up With Google</button>
+                        <button onClick={logOut}>Sign Up With Google</button>
                     </div>
                 </div>
             </form>

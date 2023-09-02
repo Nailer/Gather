@@ -6,7 +6,7 @@ export default function Booking() {
   return (
     <div>
         <h1>About Page</h1>
-        {/* <p><Link to="/home">Here</Link></p> */}
+        <p><Link to="/home">Here</Link></p>
     </div>
   )
 }
