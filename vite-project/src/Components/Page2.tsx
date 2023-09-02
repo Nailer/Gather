@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import "./page.css"
+import "./page2.css"
 import Head from './Head'
 import { Link } from "react-router-dom"
 import code from "../assets/qrcode.png"
@@ -7,7 +7,7 @@ import { auth, googleProvider } from "../Config/FirebaseConfig"
 import { createUserWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth"
 import QRCode from 'qrcode.react';
 
-export default function Page() {
+export default function Page2() {
 
 
     const [students, setStudents] = useState (0)

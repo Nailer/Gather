@@ -2,10 +2,13 @@ import React from 'react'
 import "./home.css"
 import Head from './Head'
 import Footer from './Footer'
+import { Link } from 'react-router-dom'
 import { auth, googleProvider } from "../Config/FirebaseConfig"
 import { createUserWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth"
 
 export default function Home() {
+
+
 
     const signInWithGoogle = async () => {
         try{
@@ -43,16 +46,16 @@ export default function Home() {
             <div className="junctions">
                 <div className="junctionLists">
                     <div>
-                        <button className='usage'>Left Junction A</button>
+                        <button className='usage'><Link to="/pageLeftA">Left Junction A</Link></button>
                     </div>
                     <div>
-                        <button className='usage'>Left Junction E</button>
+                        <button className='usage'><Link to="/pageLeftE">Left Junction E</Link></button>                   
                     </div>
                     <div>
-                        <button className='usage'>Right Junction A</button>
+                        <button className='usage'><Link to="/pageRightA">Right Junction A</Link></button>
                     </div>
                     <div>
-                        <button className='usage'>Right Junction E</button>
+                        <button className='usage'><Link to="/pageRightE">Right Junction E</Link></button>
                     </div>
                 </div>
             </div>

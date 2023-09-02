@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <div className="footer">
         <footer>
-            <span>© Aje </span>
+            <span>© Aje Copyright 2023 </span>
         </footer>
     </div>
 
