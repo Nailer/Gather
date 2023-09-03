@@ -9,7 +9,7 @@ export default function Head() {
         <img src={Logo} alt="" />
       </div>
       <div className="contactUs">
-        <h2>Contact Us</h2>
+        <h2><a href='https://chat.whatsapp.com/CWd3TRV5Q501ocCtXu1Uz0'>Contact Us</a></h2>
       </div>
 
 
