@@ -2,7 +2,6 @@ import { auth, googleProvider } from "../Config/FirebaseConfig"
 import { createUserWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth"
 import Head from './Head'
 import "./order.css"
-import Home from "./Home"
 import Footer from './Footer'
 import { Link, Navigate } from "react-router-dom"
 import { useState } from "react"
@@ -78,13 +77,7 @@ export default function Order() {
             </div>
 
             <div className="emailDivv">
-                <button onClick={signInWithGoogle}>Sign Up With Google</button>
-            </div>
-
-            <div className="emailDivv">
-                <button onClick={signIn}>
-                    <Link to="/home">/Home</Link>
-                </button>
+                <button onClick={signInWithGoogle}><Link to="/home">Sign Up With Google</Link></button>
             </div>
         </div>
         <Footer />
